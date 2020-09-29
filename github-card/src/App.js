@@ -14,7 +14,7 @@ class App extends React.Component {
   }
 
   fetchUser = () => {
-    fetch("https://api.github.com/users/agyin3")
+    fetch("https://api.github.com/users/sjsussman")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -23,16 +23,16 @@ class App extends React.Component {
       });
   };
 
-  // fetchFollowers = () => {
-  //   fetch("https://api.github.com/users/sjsussman/followers")
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       this.setState({
-  //         followers: res,
-  //       });
-  //       console.log(res);
-  //     });
-  // };
+  fetchFollowers = () => {
+    fetch("https://api.github.com/users/sjsussman/followers")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          followers: res,
+        });
+        console.log(res);
+      });
+  };
 
   fetchFollowerUrl = (followers) => {
     fetch(`https://api.github.com/users/${followers}`)
